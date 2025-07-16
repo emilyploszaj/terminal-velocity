@@ -1,0 +1,18 @@
+{
+	"authors": [
+		"Emi"
+	],
+	"copyright": "Copyright © 2025, Emi",
+	"dependencies": {
+		"bindbc-sdl": "~>1.5"
+	},
+	"description": "A minimal D application.",
+	"versions": [
+		"SDL_Mixer_2_8"
+	],
+	"libs": [
+		"SDL2_mixer"
+	],
+	"license": "proprietary",
+	"name": "terminal-velocity"
+}

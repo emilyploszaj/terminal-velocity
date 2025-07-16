@@ -1,0 +1,16 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/terminal-velocity
+terminal-velocity.so
+terminal-velocity.dylib
+terminal-velocity.dll
+terminal-velocity.a
+terminal-velocity.lib
+terminal-velocity-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst

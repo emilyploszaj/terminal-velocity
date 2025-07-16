@@ -1,0 +1,118 @@
+name=Drones
+artist=she
+start=190
+bpm=129
+
+/8
+m= f, j, d, k, f, j, d, k
+/16
+m= f, -, j, -,   d, -, j, f,   k, -, j, -,   d, -, f, -
+/8
+m= f, j, d, k, f, j, d, k
+/16
+m= d, f, d, -,   j, -, k, f,   k, -, d, -,   j, -, d, -
+/8
+m= k, k, j, j, f, f, d, k
+m= f, f, j, j, d, d, k, d
+m= k, k, j, j, f, f, d, k
+m= f, f, j, j, d, d, k, d
+
+m= kf, k, j, j, f, f, d, k
+m= f, f, j, j, d, d, k, d
+m= k, k, j, j, f, f, d, k
+m= f, -, j, -, dk, fj, j, f
+
+
+m= dk, f, jk, k, fj, d, dk, k
+m= dj, k, df, j, fk, j, jk, d
+m= dk, f, jk, k, fj, d, dk, k
+m= dj, k, df, j, fk, j, jk, d
+m= dk, f, jk, k, fj, d, dk, k
+m= dj, k, df, j, fk, j, jk, d
+m= dk, f, jk, k, fj, d, dk, k
+m= dj, k, df, j, fk, j, jk, d
+
+
+m= dk, k, kf, k, kj, k, dfj, k
+m= dk, k, kf, k, df, j, dfk, j
+m= dk, d, dj, d, df, d, fjk, d
+m= dk, d, dj, d, dj, f, djk, f
+
+
+m= dk, k, kf, k, kj, k, dfj, k
+m= dk, k, kf, k, df, j, dfk, j
+m= dk, -, -, -, -, -, -, -
+m= fj, f, fj, j, fj, d, -, k
+
+
+m= df, fj, jk, f, dj, j, kf, f
+m= dk, f, fj, d, dk, f, fk, d
+m= dk, j, fj, k, dk, k, fk, j
+m= dk, f, fj, d, dk, f, fk, d
+m= df, fj, jk, f, dj, j, kf, f
+m= dk, f, fj, d, dk, f, fk, d
+m= dk, j, fj, k, dk, k, fk, j
+m= dk, f, fj, d, dk, f, fk, d
+m= df, fj, jk, f, dj, j, kf, f
+m= dk, f, fj, d, dk, f, fk, d
+m= dk, j, fj, k, dk, k, fk, j
+m= dk, f, fj, d, dk, f, fk, d
+m= df, fj, jk, f, dj, j, kf, f
+m= dk, f, fj, d, dk, f, fk, d
+m= dk, j, fj, k, dk, k, fk, j
+m= dk, f, fj, d, dk, f, fk, d
+
+m= dfk, j, fjk, d, fjk, j, dfk, j
+m= fjk, d, fjk, j, dfk, j, fjk, d
+m= fjk, j, dfk, j, fjk, d, fjk, j
+/16
+m= dk, -, -, -,   fj, -, -, k,   fd, -, -, k,   -, -, fj, -
+
+
+m= dj, -, k, -,   fk, -, j, -,   dj, -, k, j,   fk, -, j, -
+m= fk, -, d, -,   dj, -, f, -,   fk, -, d, f,   dj, -, f, -
+m= dj, -, k, -,   fk, -, j, -,   dj, -, k, j,   fk, -, j, -
+m= fk, -, d, -,   dj, -, f, -,   fk, -, d, f,   dj, -, f, -
+
+m= fj, -, j, -,   df, -, d, -,   jk, -, j, f,   dk, -, f, -
+m= fj, -, f, -,   jk, -, k, -,   df, -, f, j,   dk, -, j, -
+m= fj, -, j, -,   df, -, d, -,   jk, -, j, f,   dk, -, f, -
+m= djk, -, -, -,  djk, -, -, -,  f, -, d, -,    -, k, j, -
+
+m= df, -, k, -,   fj, -, d, -,   dk, -, f, -,   fj, k, jd, -
+m= jk, -, d, -,   fj, -, k, -,   dk, -, j, -,   fj, d, fk, -
+m= df, -, k, -,   fj, -, d, -,   dk, -, f, -,   fj, k, jd, -
+m= jk, -, d, -,   fj, -, k, -,   dk, -, j, -,   fj, d, fk, -
+m= df, -, k, -,   fj, -, d, -,   dk, -, f, -,   fj, k, jd, -
+m= jk, -, d, -,   fj, -, k, -,   dk, -, j, -,   fj, d, fk, -
+m= df, -, k, -,   fj, -, d, -,   dk, -, f, -,   fj, k, jd, -
+m= jk, -, d, -,   fj, -, k, -,   dk, -, j, -,   fj, d, fk, -
+
+/8
+m= df, fj, jk, k, fj, d, dk, k
+m= dj, k, df, j, fk, j, jk, d
+m= dk, f, jk, k, fj, d, dk, k
+m= dj, k, df, j, fk, j, jk, fj
+m= df, fj, jk, k, fj, d, dk, k
+m= dj, k, df, j, fk, j, jk, d
+m= dk, f, jk, k, fj, d, dk, k
+m= dj, k, df, j, fk, j, jk, fj
+
+m= fj, d, jf, f, fj, j, fj, k
+m= fj, d, jf, f, fj, j, fj, k
+m= dk, k, dk, j, dk, f, dk, d
+/16
+m= d, -, f, -,   j, -, k, -,   d, -, -, k,  -, f, -, -
+
+/8
+m= df, fj, jk, k, fj, d, dk, k
+m= dj, k, df, j, fk, j, jk, d
+m= dk, f, jk, k, fj, d, dk, k
+m= dj, k, df, j, fk, j, jk, fj
+m= df, fj, jk, k, fj, d, dk, k
+m= dj, k, df, j, fk, j, jk, d
+m= dk, f, -, -, f, j, k, -
+/16
+m= jk, -, k, -,   fk, -, k, -,   jk, -, df, -,   -, -, jk, -
+
+
