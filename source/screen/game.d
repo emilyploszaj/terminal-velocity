@@ -3,6 +3,7 @@ module screen.game;
 import std.conv;
 import std.math;
 import std.traits;
+import std.uni;
 
 import app;
 import input;
@@ -10,16 +11,6 @@ import parser;
 import screen.screen;
 import settings;
 import sound;
-
-ulong[4] lastPress;
-long lastJudgement = 0;
-ulong[5] judgementCounts;
-
-long cumulativeAccuracy = 0;
-long objectsHit = 0;
-long totalScore = 0;
-long maxScore = 0;
-enum ulong SCROLL_TIME = 700;
 
 struct Judgement {
 	size_t index;
@@ -48,13 +39,25 @@ class LiveNote {
 }
 
 class GameScreen : Screen {
+	Screen previousScreen;
 	ulong start;
 	Song song;
 	LiveNote[] liveNotes;
 	size_t nextProcess = 0;
 	bool musicStarted = false;
 
-	this(Song song) {
+	ulong[4] lastPress;
+	long lastJudgement = 0;
+	ulong[5] judgementCounts;
+
+	long cumulativeAccuracy = 0;
+	long objectsHit = 0;
+	long totalScore = 0;
+	long maxScore = 0;
+	enum ulong SCROLL_TIME = 700;
+
+	this(Screen previousScreen, Song song) {
+		this.previousScreen = previousScreen;
 		this.song = song;
 		initMusic(song);
 		start = curMsecs();
@@ -74,8 +77,8 @@ class GameScreen : Screen {
 		ulong time = curMsecs() - start;
 		print(color(32) ~ "terminal ~ velocity" ~ reset(), width / 2 - 9, Settings.downscroll ? 0 : height - 1);
 
-		print("\033[1;34m" ~ song.name ~ reset(), width / 2 - 48, 3);
-		print("\033[2;32m" ~ song.artist ~ reset(), width / 2 - 48, 5);
+		printTitledBigString("Song", song.name.toUpper(), width / 2 + 22, 5);
+		printTitledBigString("Artist", song.artist.toUpper(),  width / 2 + 22, 10);
 
 		uint c0x = width / 2 - 10 * 2 + 3;
 
@@ -92,15 +95,13 @@ class GameScreen : Screen {
 			avgErr = (cumulativeAccuracy / objectsHit);
 		}
 
-		print("\033[1m" ~ "Accuracy" ~ reset(), width / 2 + 22, height - 11);
-		drawBigString(acc.to!string ~ "%", width / 2 + 23, height - 10);
-		print("\033[1m" ~ "Score" ~ reset(), width / 2 + 22, height - 6);
-		drawBigString(totalScore.to!string, width / 2 + 23, height - 5);
- 		print("Avg Error: " ~ avgErr.to!string, 0, 9);
+		printTitledBigString("Accuracy", acc.to!string ~ "%", width / 2 + 22, height - 16);
+		printTitledBigString("Score", totalScore.to!string, width / 2 + 22, height - 11);
+		printTitledBigString("Average Error", avgErr.to!string, width / 2 + 22, height - 6);
 
 		for (int i = 0; i < 4; i++) {
 			int x = i * 10 + c0x - 1;
-			if (time - lastPress[i] < 100) {
+			if (lastPress[i] > 0 && time - lastPress[i] < 100) {
 				string text = bg(61) ~ "       " ~ reset();
 				for (int y = 1; y < height - 1; y++) {
 					print(text, x, y);
@@ -141,7 +142,7 @@ class GameScreen : Screen {
 			int x = i * 10 + c0x - 1;
 			int y = Settings.downscroll ? height - 1 : 0;
 			string text = "[     ]";
-			if (time - lastPress[i] < 100) {
+			if (lastPress[i] > 0 && time - lastPress[i] < 100) {
 				text = "[xxxxx]";
 			}
 			print(text, x, y);
@@ -206,6 +207,9 @@ class GameScreen : Screen {
 				ulong time = input.time - start;
 				lastPress[c] = time;
 				press(c, time);
+			} else if (input.c == '\033') {
+				stopMusic();
+				currentScreen = previousScreen;
 			}
 		}
 	}

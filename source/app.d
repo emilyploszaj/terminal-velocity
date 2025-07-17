@@ -12,28 +12,44 @@ import std.traits;
 import input;
 import parser;
 import screen.screen;
+import settings;
 import sound;
 
-void main() {
+bool shouldQuit = false;
+
+int main() {
+	readSettings();
 	initScreen();
 	initSDL();
 	initInput();
 	
 	termios raw;
 	tcgetattr(STDIN_FILENO, &raw);
+	auto old_c_lflag = raw.c_lflag;
 	raw.c_lflag &= ~(ECHO | ICANON);
-	tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw);
+	//raw.c_cc[VMIN] = 1;
+	//raw.c_cc[VTIME] = 0;
+	tcsetattr(STDIN_FILENO, TCSANOW, &raw);
+	writeln("\u001B[?1049h"); // Alt screen
+	writeln("\033[?25l"); // Hide cursor
 
-	while(true) {
+	while(shouldQuit == false) {
 		if (pollSDL()) {
 			break;
 		}
 		runInput();
 		renderScreen();
-		Thread.sleep(dur!"msecs"(12));
+		Thread.sleep(dur!"msecs"(Settings.frameDuration));
 	}
-	import core.stdc.stdlib;
-	exit(0);
+	write("\033[?25h"); // Show cursor
+	write("\u001B[?1049l\n"); // Restore screen
+	foreach (t; Thread.getAll()) {
+		t.isDaemon = true;
+	}
+	deinitSDL();
+	raw.c_lflag = old_c_lflag;
+	tcsetattr(STDIN_FILENO, TCSANOW, &raw);
+	return 0;
 }
 
 ulong curMsecs() {

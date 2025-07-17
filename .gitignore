@@ -9,6 +9,7 @@ terminal-velocity.dll
 terminal-velocity.a
 terminal-velocity.lib
 terminal-velocity-test-*
+*.ini
 *.exe
 *.pdb
 *.o

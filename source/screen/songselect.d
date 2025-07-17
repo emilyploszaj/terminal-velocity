@@ -12,6 +12,7 @@ import input;
 import parser;
 import screen.screen;
 import screen.game;
+import screen.menu;
 
 class SongSelectScreen : Screen {
 	Song[] options;
@@ -35,13 +36,14 @@ class SongSelectScreen : Screen {
 		for (int i = 0; i < options.length; i++) {
 			Song song = options[i];
 			bool selected = i == selectedOption;
+			string style = "";
 			if (selected) {
-				print(color(34));
+				style = color(34);
 			}
-			int y = i * 5 + 2;
-			int x = width / 2 - 20;
-			print(song.name, x, y);
-			print(song.artist, x, y + 1);
+			int y = i * 7 + 2;
+			int x = width / 2;
+			printCenteredBigString(song.name, x, y, style);
+			print(style ~ song.artist, x - 20, y + 4);
 			print(reset());
 		}
 	}
@@ -49,8 +51,12 @@ class SongSelectScreen : Screen {
 	override void input(Input input) {
 		if (input.type == Input.Type.Move) {
 			selectedOption = clamp(selectedOption + input.getYOff(), 0, cast(int) options.length - 1);
-		} else if (input.type == Input.Type.Char && (input.c == ' ' || input.c == '\n')) {
-			currentScreen = new GameScreen(options[selectedOption]);
+		} else if (input.type == Input.Type.Char) {
+			if (input.c == ' ' || input.c == '\n') {
+				currentScreen = new GameScreen(this, options[selectedOption]);
+			} else if (input.c == '\033') {
+				currentScreen = new MenuScreen();
+			}
 		}
 	}
 }

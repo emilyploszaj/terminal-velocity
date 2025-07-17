@@ -6,7 +6,7 @@
 	"dependencies": {
 		"bindbc-sdl": "~>1.5"
 	},
-	"description": "A minimal D application.",
+	"description": "A CLI rhythm game.",
 	"versions": [
 		"SDL_Mixer_2_8"
 	],

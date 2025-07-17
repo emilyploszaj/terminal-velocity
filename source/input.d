@@ -42,9 +42,14 @@ private shared Input[] input;
 
 void initInput() {
 	inputMutex = new shared Mutex();
-	new Thread({
+	Thread thread =new Thread({
 		inputLoop();
-	}).start();
+	});
+	thread.isDaemon = true;
+	thread.start();
+	import core.sys.posix.fcntl;
+	import std.stdio;
+	fcntl(stdin.fileno, F_SETFL, fcntl(stdin.fileno, F_GETFL) | O_NONBLOCK);
 }
 
 Input[] getInput() {
@@ -56,36 +61,59 @@ Input[] getInput() {
 }
 
 void inputLoop() {
-	import std.stdio;
+	ulong escStart = 0;
 	string esc;
 	char[1] buf;
-	while (true) {
-		char[] slice = stdin.rawRead(buf);
-		char c = slice[0];
-		if (esc.length != 0 || c == '\033') {
-			esc ~= c;
-			if (esc == "\033[A") {
-				addInput(Input.Type.Move, 'w');
-			} else if (esc == "\033[B") {
-				addInput(Input.Type.Move, 's');
-			} else if (esc == "\033[C") {
-				addInput(Input.Type.Move, 'd');
-			} else if (esc == "\033[D") {
-				addInput(Input.Type.Move, 'a');
-			} else if (esc == "\033[E") {
-				addInput(Input.Type.Key, 'e');
-			} else {
-				continue;
+	while (!shouldQuit) {
+		if (escStart != 0 && curMsecs > escStart + 50) {
+			if (esc == "\033") {
+				addInput(Input.Type.Char, '\033');
 			}
+			parseEsc(esc);
 			esc.length = 0;
+			escStart = 0;
+		}
+
+		import core.stdc.stdio;
+		if (fread(buf.ptr, 1, 1, stdin) == 0) {
+			continue;
+		}
+		char c = buf[0];
+
+		if (esc.length != 0 || c == '\033') {
+			if (c == '\033') {
+				escStart = curMsecs();
+			}
+			esc ~= c;
+			if (parseEsc(esc)) {
+				esc.length = 0;
+				escStart = 0;
+			}
 		} else {
 			addInput(Input.Type.Char, c);
 		}
 	}
 }
 
+bool parseEsc(string esc) {
+	if (esc == "\033[A") {
+		addInput(Input.Type.Move, 'w');
+	} else if (esc == "\033[B") {
+		addInput(Input.Type.Move, 's');
+	} else if (esc == "\033[C") {
+		addInput(Input.Type.Move, 'd');
+	} else if (esc == "\033[D") {
+		addInput(Input.Type.Move, 'a');
+	} else if (esc == "\033[E") {
+		addInput(Input.Type.Key, 'e');
+	} else {
+		return false;
+	}
+	return true;
+}
+
 void addInput(Input.Type type, char c) {
 	inputMutex.lock();
-	input ~= Input(type, c, MonoTime.currTime.ticks.ticksToNSecs() / 1_000_000);
+	input ~= Input(type, c, curMsecs());
 	inputMutex.unlock();
 }
