@@ -21,9 +21,13 @@ class Screen {
 	}
 }
 
+void setScreen(Screen newScreen) {
+	currentScreen = newScreen;
+}
+
 void initScreen() {
 	constructBigFont;
-	currentScreen = new MenuScreen();
+	setScreen(new MenuScreen());
 }
 
 void renderScreen() {
@@ -115,11 +119,11 @@ void constructBigFont() {
 	);
 	addMap(
 		[
-			r"|\ /|    ()/         ",
-			r"| ? |     /  ___ /\/ ",
-			r"|/ \| () /()         ",
+			r"|\ /|    ()/             /\  (\  ",
+			r"| ? |     /  ___ /\/ _|_ \/ / \_ ",
+			r"|/ \| () /()          |  () \__) ",
 		],
-		"\0.%-~"
+		"\0.%-~+!&"
 	);
 	/* 
 	addMap(

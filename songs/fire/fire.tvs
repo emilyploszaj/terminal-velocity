@@ -1,0 +1,263 @@
+name=FIRE!!!
+artist=Vane & JamieP
+start=1460
+bpm=165
+
+/16
+m= d, -, f, -,   d, -, k, -,   -, -, k, -,   j, -, k, -
+m= -, -, f, -,   j, -, f, -,   k, -, f, -,   j, -, f, -
+m= k, -, j, -,   k, -, d, -,   -, -, d, -,   f, -, d, -
+m= -, -, j, -,   f, -, j, -,   d, -, j, -,   f, -, j, -
+
+m= dk, -, f, -,   d, -, jk, -,   -, -, k, -,   j, -, dk, -
+m= -, -, f, -,   dj, -, f, -,   dk, -, f, -,   dj, -, f, -
+m= dk, -, j, -,   k, -, df, -,   -, -, d, -,   f, -, dk, -
+m= -, -, j, -,   fk, -, j, -,   dk, -, j, -,   -[d, -, -, -
+
+m= df, -, d, -]d,   dk, -, k, -,   -, -, dk, -,   d, -, dk, -
+m= -, -, f, -,   dk, -, f, -,   dk, -, f, -,   dk, -, f, -
+m= fj, -, k, -,   dj, -, f, -,   -, -, jk, -,   j, -, dk, -
+m= -, -, k, -,   fj, -, d, -,   fj, -, k, -,   fj, -, d, -
+
+m= df, -, d, -,   dk, -, k, -,   -, -, dk, -,   d, -, dk, -
+m= -, -, f, -,   dk, -, f, -,   dk, -, f, -,   dk, -, f, -
+m= fj, -, k, -,   dj, -, f, -,   -, -, jk, -,   j, -, dk, -
+m= -, -, k, -,   fj, -, d, -,   fj, -, -, -,   -, -, -, -
+
+; a hunger for retribution
+
+m= -, -, -, -,   d[j, -, -, -,   f]j, -, d, -,   -[f, -,   f, -
+m= -]f, -, d, -,   -[j, -, f, -,   d]j, -, -, -,   f[f, -,   -, -  
+m= -]f, -, -, -,   d[j, -, -, -,   f]j, -, d, -,   -[f, -,   f, -
+m= -]f, -, d, -,   -[j, -, f, -,   d]j, -, -, -,   f, -,   f, -
+
+
+m= fjk, -, k, -,   fj, -, d, -,   f, -, jk, -,   d, -, f, -
+m= k, -, j, -,   f, -, fk, -,   j, -, d, -,   fj, -, k, -
+m= j, -, d, -,   fj[k, -, k, -,   j]k, -, df, -,   k[f, -, j, -]f
+m= d, -, f, -,   j[d, -, dj, -,   f]d, -, k, -,   fj[k, -, d, -]k
+
+m= f, -, k, -,   fj, -, d, -,   f, -, jk, -,   d, -, f, -
+m= k, -, j, -,   f, -, fk, -,   j, -, d, -,   fj, -, k, -
+m= j, -, d, -,   fj[k, -, k, -,   j]k, -, df, -,   k[f, -, j, -]f
+m= d, -, f, -,   j[d, -, dj, -,   f]d, -, k, -,   fj[k, -, -, -]k
+
+m= d, -, d, -,   fj, -, k, -,   k, -, dj, -,   f, d, k, -
+m= d, -, d, -,   f, -, jk, -,   d, -, d, -,   fj, d, f, -
+m= j, -, k, -,   df, -, j, -,   f, -, df, -,   k, j, d, -
+m= k, -, d, -,   k, -, fk, -,   j, -, -, -,   dfk, -, -, -
+
+m= k, -, k, -,   fj, -, d, -,   d, -, fk, -,   j, k, d, -
+m= k, -, k, -,   j, -, df, -,   k, -, k, -,   fj, k, j, -
+m= f, -, d, -,   jk, -, f, -,   j, -, k, -,   dj, f, k, -
+m= d, -, k, -,   d, -, dj, -,   f, -, -, -,   djk, -, -, -
+
+
+
+m= df, -, dk, -,   fk, -, jk, -,   fj, -, dj, -,   fk, -, dj, -
+m= fk, -, dj, -,   fk, -, jk, -,   dj, -, df, -,   dj, -, fk, -
+m= djk, -, -, -,   -, -, -, -,   -, -, -, -,   -, -, -, -
+
+; bridge
+
+m= -, -, -, -,   f, -, k, -,   -, -, f, -,   d, -, j, -
+m= k, -, -, -,   j, -, f, -,   -, -, d, -,   f, -, j, -
+m= dk, -, -, -,   d, -, f, -,   -, -, -, -,   j, -, -, -
+m= df, -, -, -,   d, -, -, -,   d, -, -, -,   d, -, -, -
+
+m= d, -, -, -,   dk, -, j, -,   d, -, k, -,   dj, -, f, -
+m= j, -, -, -,   j, -, -, -,   k, -, j, -,   -, -, f, -
+m= -, -, -, -,   -, -, -, -,   dk, -, f, -,   d, -, j, -
+
+; chorus
+
+m= df, -, f, -,   jk, -, dk, -,   k, -, fj, -,   j, -, dk, -
+m= d, -, d, -,   d, -, jk, -,   fj, -, jk, -,   kf, -, dj, -
+m= kf, -, f, -,   dk, -, fj, -,   j, -, df, -,   d, -, jk, -
+m= k, -, k, -,   k, -, df, -,   f, -, jk, -,   fj, -, df, -
+
+m= jk, -, j, -,   df, -, dk, -,   d, -, fj, -,   f, -, dk, -
+m= k, -, k, -,   k, -, df, -,   fj, -, df, -,   dj, -, fk, -
+m= dj, -, j, -,   dk, -, fj, -,   f, -, jk, -,   k, -, df, -
+m= d, -, d, -,   d, -, jk, -,   j, -, df, -,   jf, -, jk, -
+
+m= df, -, f, -,   jk, -, dk, -,   k, -, fj, -,   j, -, dk, -
+m= d, -, d, -,   d, -, jk, -,   fj, -, jk, -,   kf, -, dj, -
+m= kf, -, f, -,   dk, -, fj, -,   j, -, df, -,   d, -, jk, -
+m= k, -, k, -,   k, -, df, -,   f, -, jk, -,   fj, -, df, -
+
+
+m= jk, -, j, -,   df, -, dk, -,   d, -, fj, -,   f, -, dk, -
+m= k, -, k, -,   kj, -, df, -,   -, -, f, -,   -, -, j, -
+m= -, -, f, -,   -, -, j, -,   -, -, f, -,   -, -, j, -
+m= -, -, f, -,   -, -, j, -,   -[j, -, f, -,   -, -, djk, -
+
+; mutiny
+
+m= -]j, -, d, -,   f, -, d, -,   jk, -, -, -,   jk, -, -, -
+m= k, -, f, -,   d, -, j, -,   k, -, j, -,   f, -, -, -
+m= -, -, d, -,   f, -, d, -,   jk, -, -, -,   jk, -, -, -
+m= k, -, f, -,   d, -, j, -,   k, -, j, -,   f, -, -, -
+
+m= -, -, k, -,   j, -, k, -,   df, -, -, -,   df, -, -, -
+m= d, -, j, -,   k, -, f, -,   d, -, f, -,   j, -, -, -
+m= -, -, k, -,   j, -, k, -,   j, -, k, -,   j, -, f, -
+m= d, -, -, -,   -, -, -, -,   -[j, -, -, -,   df, -, -]j, -
+
+m= df, -, d, -,   dk, -, k, -,   -, -, dk, -,   d, -, dk, -
+m= -, -, f, -,   dk, -, f, -,   dk, -, f, -,   dk, -, f, -
+m= fj, -, k, -,   dj, -, f, -,   -, -, jk, -,   j, -, dk, -
+m= -, -, k, -,   fj, -, d, -,   fj, -, k, -,   fj, -, d, -
+
+m= df, -, d, -,   dk, -, k, -,   -, -, dk, -,   d, -, dk, -
+m= -, -, f, -,   dk, -, f, -,   dk, -, f, -,   dk, -, f, -
+m= fj, -, k, -,   dj, -, f, -,   -, -, jk, -,   j, -, dk, -
+m= -, -, k, -,   fj, -, d, -,   fj, -, -, -,   -, -, -, -
+
+; a hunger for retribu-
+
+m= -, -, -, -,   d[f, -, -, -,   f]f, -, d, -,   -[j, -, f, -
+m= -]j, -, d, -,   -[f, -, f, -,   d]f, -, -, -,   f, -, -, -
+
+
+m= fjk, -, k, -,   fj, -, d, -,   f, -, jk, -,   d, -, f, -
+m= k, -, j, -,   f, -, fk, -,   j, -, d, -,   fj, -, k, -
+m= j, -, d, -,   fj[d, -, k, -,   j]d, -, df, -,   k[j, -, j, -]j
+m= d, -, f, -,   j[k, -, dj, -,   f]k, -, k, -,   fj[d, -, d, -]d
+
+m= f, -, k, -,   fj, -, d, -,   f, -, jk, -,   d, -, f, -
+m= k, -, j, -,   f, -, fk, -,   j, -, d, -,   fj, -, k, -
+m= j, -, d, -,   fj[d, -, k, -,   j]d, -, df, -,   k[j, -, j[d, -
+m= -[k, -, -[f, -,   -, -, -, -]dfjk,   -, -, -, -,  f, j, d, k
+
+; you think it's funny?
+
+m= df, j, k, j,   fk, d, fk, j,   k, j, fk, d,   f, j, dk, j
+m= fj, dk, fj, j,   k, j, fk, dj,   fk, j, k, j,   fk, dj, fk, j
+m= fk, j, f, d,   fk, j, fk, j,   f, d, fk, j,   k, j, fk, d
+m= fk, dj, fk, j,   f, d, fk, dj,   fk, j, f, d,   fk, -, -, -
+
+;  m= fj, d, f, k,   jf, k, df, k,   j, f, dk, k,   d, k, fj, d
+;  m= fk, dj, fk, j,   f, d, fk, dj,   fk, d, j, f,   dj, fk, dj, k
+;  m= df, j, f, d,   jk, d, jk, f,   d, f, jk, d,   f, j, dk, fj
+;  m= dk, fj, dk, fj,   dk, fj, dk, j,   df, j, k, j,   df, -, -, -
+
+
+m= dfk, -, fk, -,   dj, -, fjk, -,   jk, -, djf, -,   dj, -, dj, f
+m= dj, k, dj, -,   fk, -, jk, -,   djk, -, fj, -,   dk, -, df, j
+m= dfk, -, fk, -,   dj, -, fjk, -,   jk, -, djf, -,   dj, -, dj, f
+m= dj, k, dj, -,   fk, -, jk, -,   djk, -, fj, -,   dk, -, df, j
+
+m= dfk, -, -, -,   -, -, -, -,   -, -, -, -,   -, -, dk, -
+m= dk, -, dk, -,   dk, -, dk, -,   dk, -, dk, -,   dk, -, dk, -
+
+
+m= djk, -, -, -,   -, -, -, -,   -, -, -, -,   -, -, -, -
+
+; bridge
+
+m= -, -, -, -,   f, -, k, -,   -, -, f, -,   d, -, j, -
+m= k, -, -, -,   j, -, f, -,   -, -, d, -,   f, -, j, -
+m= dk, -, -, -,   d, -, f, -,   -, -, -, -,   j, -, -, -
+m= df, -, -, -,   d, -, -, -,   d, -, -, -,   d, -, -, -
+
+m= d, -, -, -,   dk, -, j, -,   d, -, k, -,   dj, -, f, -
+m= dj, -, -, -,   d, -, f, -,   dk, -, j, -,   d, -, f, -
+m= df, -, -, -,   dj, -, -, -,   dk, -, -, -,   fk, -, -, -
+m= djk, -, j, -,   df, -, f, -,   k, -, j, -,   df, -, j, -
+
+m= k, -, j, -,   df, -, f, -,   d, -, f, -,   jk, -, d, -
+m= f, -, j, -,   dk, -, d, -,   k, -, f, -,   fj, -, k, -
+m= d, -, f, -,   jk, -, d, -,   f, -, j, -,   fk, -, k, -
+m= j, -, k, -,   fk, -, d, -,   f, -, k, -,   dj, -, f, -
+
+m= d, -, k, -,   fj, -, d, -,   k, -, d, -,   fj, -, f, -
+m= djk, -, k, -,   dfj, -, d, -,   fjk, -, f, -,   dfj, -, k, -
+m= dfj, -, j, -,   fjk, d, f, -,   djk, -, d, -,   djk, -, -, -
+
+
+; chorus
+
+m= df, -, f, -,   jk, -, dk, -,   k, -, fj, -,   j, -, dk, -
+m= d, -, d, -,   d, -, jk, -,   fj, -, jk, -,   kf, -, dj, -
+m= kf, -, f, -,   dk, -, fj, -,   j, -, df, -,   d, -, jk, -
+m= k, -, k, -,   k, -, df, -,   f, -, jk, -,   fj, -, df, -
+
+m= jk, -, j, -,   df, -, dk, -,   d, -, fj, -,   f, -, dk, -
+m= k, -, k, -,   k, -, df, -,   fj, -, df, -,   dj, -, fk, -
+m= dj, -, j, -,   dk, -, fj, -,   f, -, jk, -,   k, -, df, -
+m= d, -, d, -,   d, -, jk, -,   j, -, df, -,   jf, -, jk, -
+
+m= df, -, f, -,   jk, -, dk, -,   k, -, fj, -,   j, -, dk, -
+m= d, -, d, -,   d, -, jk, -,   fj, -, jk, -,   kf, -, dj, -
+m= kf, -, f, -,   dk, -, fj, -,   j, -, df, -,   d, -, jk, -
+m= k, -, k, -,   k, -, df, -,   f, -, jk, -,   fj, -, df, -
+
+
+m= jk, -, j, -,   df, -, dk, -,   d, -, fj, -,   f, -, dk, -
+m= k, -, k, -,   kj, -, df, -,   -, -, f, -,   -, -, j, -
+m= -, -, f, -,   -, -, j, -,   -, -, f, -,   -, -, j, -
+m= -, -, f, -,   -, -, j, -,   -[f, -, f, -,   -, -, djk, -
+
+; mutiny
+
+m= -]f, -, d, -,   f, -, d, -,   jk, -, -, -,   jk, -, -, -
+m= k, -, f, -,   d, -, j, -,   k, -, j, -,   f, -, -, -
+m= -, -, d, -,   f, -, d, -,   jk, -, -, -,   jk, -, -, -
+m= k, -, f, -,   d, -, j, -,   k, -, j, -,   f, -, -, -
+
+m= -, -, k, -,   j, -, k, -,   df, -, -, -,   df, -, -, -
+m= d, -, j, -,   k, -, f, -,   d, -, f, -,   j, -, -, -
+m= -, -, k, -,   j, -, k, -,   j, -, k, -,   j, -, f, -
+m= d, -, -, -,   -, -, -, -,   -[f, -, -, -,   df, -, -]f, -
+
+m= df, -, d, -,   dk, -, k, -,   -, -, dk, -,   d, -, dk, -
+m= -, -, f, -,   dk, -, f, -,   dk, -, f, -,   dk, -, f, -
+m= fj, -, k, -,   dj, -, f, -,   -, -, jk, -,   j, -, dk, -
+m= -, -, k, -,   fj, -, d, -,   fj, -, k, -,   fj, -, d, -
+
+m= df, -, d, -,   dk, -, k, -,   -, -, dk, -,   d, -, dk, -
+m= -, -, f, -,   dk, -, f, -,   dk, -, f, -,   dk, -, f, -
+m= fj, -, k, -,   dj, -, f, -,   -, -, jk, -,   j, -, dk, -
+m= -, -, k, -,   fj, -, d, -,   jk, -, -, -,   -, -, df, -
+
+m= -, -, -, -,   dj, -, -, -,   df, -, -, -,   jk, -, -, -
+m= dk, -, -, -,   dk, -, -, -,   fj, -, j, -,   -, -, df, -
+m= -, -, -, -,   jk, -, -, -,   df, -, -, -,   fj, -, -, -
+m= fk, -, -, -,   jk, -, -, -,   fj, -, d, -,   -, -, jk, -
+
+m= -, -, -, -,   fj, -, -, -,   fj, -, -, -,   fj, -, -, -
+m= fj, -, -, -,   fj, -, -, -,   fj, -, f, -,   -, -, fj, -
+m= df, -, d, -,   f, -, d, -,   f, -, d, -,   f, -, d, -
+m= jk, -, k, -,   j, -, k, -,   j, -, k, -,   j, -, k, -
+
+m= dk, -, d, -,   k, -, d, -,   k, -, d, -,   k, -, d, -
+m= fj, -, f[d, -,   j, -, f, -,   j, -, f, -,   j, -, f, -
+
+tempo=150
+/4
+
+m= jk, -]d, -, -
+m= -, -, -, -
+m= -, -, -, -
+m= -, -, -, -
+m= -, -, -, -
+
+/8
+m= -, -, fj, -,   d, f, d, -
+m= d, -, f, -,   j, -, dk, -
+m= f, j, f, j,   f, -, d, -
+m= k, -, fj, -,   k, j, k, -
+m= k, -, j, -,   f, -, dk, -
+m= j, f, j, f,   j, -, jk, -
+m= df, -, fj, k,   d, k, df, j
+m= dk, f, j, k,   fj, d, jk, f
+/16
+m= d, -, fk, -,   j, -, dk, -,   fj, -, d, f,   d, -, j, -
+/16
+m= fk, -, j, -,   df, j, k, -,   fj, -, dk, -,   f, d, f, -
+/8
+m= jk, f, d, f,   j, k, df, -
+m= jk, -[f, djk, -]f[j,   dfk, -]j[d, fjk, -]d[k
+/8
+m= dfj, -]k, -, -,   -, -, -, -

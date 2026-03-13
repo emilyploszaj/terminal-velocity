@@ -1,3 +1,4 @@
+import std.conv;
 import std.string;
 
 import bindbc.sdl;
@@ -7,12 +8,14 @@ import settings;
 
 Mix_Music* music;
 
+long musicOffset;
+
 void initSDL() {
 	loadSDL();
 	loadSDLMixer();
 	SDL_Init(SDL_INIT_AUDIO);
 	Mix_Init(MIX_INIT_MP3);
-	Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 4096);
+	Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 128);
 }
 
 void deinitSDL() {
@@ -26,9 +29,10 @@ void initMusic(Song song) {
 	music = Mix_LoadMUS(song.audioFile.toStringz());
 }
 
-void playMusic() {
+void playMusic(ulong time) {
 	Mix_VolumeMusic(MIX_MAX_VOLUME * Settings.volume / 15);
 	Mix_PlayMusic(music, 0);
+	Mix_SetMusicPosition(time / 1000.0);
 }
 
 void stopMusic() {
@@ -42,5 +46,7 @@ bool pollSDL() {
 			return true;
 		}
 	}
+	musicOffset = (Mix_GetMusicPosition(music) * 1000).to!long;
+
 	return false;
 }

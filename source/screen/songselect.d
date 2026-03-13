@@ -53,9 +53,9 @@ class SongSelectScreen : Screen {
 			selectedOption = clamp(selectedOption + input.getYOff(), 0, cast(int) options.length - 1);
 		} else if (input.type == Input.Type.Char) {
 			if (input.c == ' ' || input.c == '\n') {
-				currentScreen = new GameScreen(this, options[selectedOption]);
+				setScreen(new GameScreen(this, options[selectedOption]));
 			} else if (input.c == '\033') {
-				currentScreen = new MenuScreen();
+				setScreen(new MenuScreen());
 			}
 		}
 	}

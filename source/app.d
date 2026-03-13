@@ -27,8 +27,6 @@ int main() {
 	tcgetattr(STDIN_FILENO, &raw);
 	auto old_c_lflag = raw.c_lflag;
 	raw.c_lflag &= ~(ECHO | ICANON);
-	//raw.c_cc[VMIN] = 1;
-	//raw.c_cc[VTIME] = 0;
 	tcsetattr(STDIN_FILENO, TCSANOW, &raw);
 	writeln("\u001B[?1049h"); // Alt screen
 	writeln("\033[?25l"); // Hide cursor

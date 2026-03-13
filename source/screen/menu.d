@@ -20,7 +20,7 @@ class MenuScreen : Screen {
 	this() {
 		options ~= Option((s) => "Play", (i) {
 			if (i == 0) {
-				currentScreen = new SongSelectScreen();
+				setScreen(new SongSelectScreen());
 			}
 		});
 		options ~= Option((s) {
