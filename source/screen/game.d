@@ -75,6 +75,8 @@ class GameScreen : Screen {
 	size_t nextProcess = 0;
 	bool musicStarted = false;
 
+	string currentGraphic = "";
+
 	bool flipped = false;
 	long lastFlip = -9999;
 	ulong[4] lastPress;
@@ -111,6 +113,17 @@ class GameScreen : Screen {
 		string minutes = ("0" ~ ((time / 1000) / 60).to!string)[$ - 2..$];
 		string seconds = ("0" ~ ((time / 1000) % 60).to!string)[$ - 2..$];
 		print("Time: " ~ minutes ~ ":" ~ seconds, 0, 0);
+
+		if (currentGraphic != "") {
+			int gx = (width / 2 - 18) / 2;
+			int gy = (height - 10) / 2;
+			Graphic g = song.graphics[currentGraphic];
+			gx -= g.width / 2;
+			gy -= g.height / 2;
+			for (uint i = 0; i < g.height; i++) {
+				print(g.lines[i], gx, gy + i);
+			}
+		}
 
 		printTitledBigString("Song", song.name.toUpper(), width / 2 + 22, 5);
 		printTitledBigString("Artist", song.artist.toUpper(),  width / 2 + 22, 10);
@@ -182,6 +195,10 @@ class GameScreen : Screen {
 
 		foreach (LiveNote live; liveNotes) {
 			if (time > live.note.getEnd()) {
+				if (cast(GraphicNote) live.note !is null) {
+					GraphicNote note = cast(GraphicNote) live.note;
+					currentGraphic = note.graphic;
+				}
 				continue;
 			}
 			if (cast(NormalNote) live.note !is null) {
@@ -396,6 +413,7 @@ class GameScreen : Screen {
 	}
 
 	void press(uint col, ulong time) {
+		time -= Settings.globalOffset;
 		uint rawCol = col;
 		if (flipped) {
 			col = 3 - col;

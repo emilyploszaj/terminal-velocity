@@ -33,6 +33,12 @@ class SongSelectScreen : Screen {
 		
 		print(color(32) ~ "terminal ~ velocity" ~ reset(), width / 2 - 9, 0);
 
+		drawSongList(0, 0, width - 40, height);
+
+		drawSongInfo(options[selectedOption], width - 40, 0, 40, height);
+	}
+
+	void drawSongList(int x, int y, int width, int height) {
 		for (int i = 0; i < options.length; i++) {
 			Song song = options[i];
 			bool selected = i == selectedOption;
@@ -40,12 +46,29 @@ class SongSelectScreen : Screen {
 			if (selected) {
 				style = color(34);
 			}
-			int y = i * 7 + 2;
-			int x = width / 2;
-			printCenteredBigString(song.name, x, y, style);
-			print(style ~ song.artist, x - 20, y + 4);
+			int sy = y + i * 7 + 2;
+			int sx = x + width / 2;
+			printCenteredBigString(song.name, sx, sy, style);
+			print(style ~ song.artist, sx - 20, sy + 4);
 			print(reset());
 		}
+	}
+
+	void drawSongInfo(Song song, int x, int y, int width, int height) {
+		print(color(32) ~ "Song:     ", x + 1, y + 1);
+		print(reset() ~ song.name);
+		print(color(32) ~ "Artist:   ", x + 1, y + 3);
+		print(reset() ~ song.artist);
+		print(color(32) ~ "Charting: ", x + 1, y + 5);
+		print(reset() ~ "Emi");
+		print(color(32) ~ "Length:   ", x + 1, y + 9);
+		ulong seconds = song.notes[$ - 1].getEnd() / 1000;
+		string duration =
+			("0" ~ (seconds / 60).to!string)[$ - 2..$] ~ ":" ~
+			("0" ~ (seconds % 60).to!string)[$ - 2..$];
+		print(reset() ~ duration);
+		print(color(32) ~ "Notes:    ", x + 1, y + 11);
+		print(reset() ~ song.notes.length.to!string);
 	}
 
 	override void input(Input input) {

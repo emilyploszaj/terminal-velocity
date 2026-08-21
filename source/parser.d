@@ -5,6 +5,7 @@ import std.file;
 
 struct Song {
 	Note[] notes;
+	Graphic[string] graphics;
 	string audioFile;
 	string name;
 	string artist;
@@ -55,6 +56,41 @@ class BlockingNote: Note {
 	}
 }
 
+class GraphicNote: Note {
+	ulong time;
+	string graphic;
+
+	this(ulong time, string graphic) {
+		this.time = time;
+		this.graphic = graphic;
+	}
+
+	override @property ulong getStart() {
+		return time;
+	}
+
+	override @property ulong getEnd() {
+		return time;
+	}
+}
+
+struct Graphic {
+	string name;
+	string[] lines;
+	uint width, height;
+
+	this(string name, string[] lines) {
+		this.name = name;
+		this.lines = lines;
+		this.height = cast(uint) lines.length;
+		foreach (line; lines) {
+			if (line.length > width) {
+				this.width = cast(uint) line.length;
+			}
+		}
+	}
+}
+
 Song parseSong(string file, long offset) {
 	string song = cast(string) read(file);
 	string audioFile = file[0..$-4] ~ ".mp3";
@@ -78,7 +114,20 @@ Song parseSong(string file, long offset) {
 	string name = "";
 	string artist = "";
 	BlockingNote[4] currentBlocks;
+	Graphic[string] graphics;
+	string currentGraphic = "";
+	string[] graphicLines;
 	foreach (string line; song.split("\n")) {
+		if (currentGraphic != "") {
+			if (line.startsWith("`")) {
+				graphics[currentGraphic] = Graphic(currentGraphic, graphicLines);
+				currentGraphic = "";
+				graphicLines = [];
+			} else {
+				graphicLines ~= line;
+			}
+			continue;
+		}
 		line = line.strip();
 		if (line.countUntil(";") != -1) {
 			line = line.split(";")[0].strip();
@@ -117,11 +166,26 @@ Song parseSong(string file, long offset) {
 				time -= offset;
 				uint mode = 0;
 				Note[] batch;
+				string partialGraphic = "";
 				foreach (char c; part.strip()) {
 					if (c == '[') {
 						mode = 1;
 					} else if (c == ']') {
 						mode = 2;
+					} else if (c == '(') {
+						mode = 3;
+						continue;
+					} else if (c == ')') {
+						if (partialGraphic.length > 0 && partialGraphic !in graphics) {
+							throw new Exception("Graphic " ~ partialGraphic ~ " was not defined!");
+						}
+						notes ~= new GraphicNote(time, partialGraphic);
+						mode = 0;
+						continue;
+					}
+					if (mode == 3) {
+						partialGraphic ~= c;
+						continue;
 					}
 					if (c in colMap) {
 						int col = colMap[c];
@@ -146,6 +210,8 @@ Song parseSong(string file, long offset) {
 				notes ~= batch;
 			}
 			measure++;
+		} else if (line.startsWith("(") && line.endsWith(")=`")) {
+			currentGraphic = line.split("(")[1].split(")=")[0];
 		}
 	}
 	for (int i = 0; i < 4; i++) {
@@ -153,7 +219,7 @@ Song parseSong(string file, long offset) {
 			throw new Exception("Blocker in col " ~ i.to!string ~ " was never ended");
 		}
 	}
-	return Song(notes, audioFile, name, artist, skip);
+	return Song(notes, graphics, audioFile, name, artist, skip);
 }
 
 ulong getTime(ulong anchor, ulong bpm, ulong measure, ulong measureSplit, ulong note) {

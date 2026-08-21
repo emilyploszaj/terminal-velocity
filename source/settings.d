@@ -7,12 +7,13 @@ private enum string SETTINGS_FILE = "settings.ini";
 class Settings {
 	static int frameDuration = 12;
 	static int volume = 10;
+	static int globalOffset = 0;
 	static bool downscroll = true;
 }
 
 void writeSettings() {
 	string settings;
-	settings ~= "[terminal-velocity]";
+	settings ~= "[terminal-velocity]" ~ "\n";
 	settings ~= "frame-duration = " ~ Settings.frameDuration.to!string ~ "\n";
 	settings ~= "volume = " ~ Settings.volume.to!string ~ "\n";
 	settings ~= "downscroll = " ~ Settings.downscroll.to!string ~ "\n";

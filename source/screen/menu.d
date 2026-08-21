@@ -35,12 +35,22 @@ class MenuScreen : Screen {
 		});
 		options ~= Option((s) {
 			if (s) {
-				return "<" ~ padTo(Settings.frameDuration.to!string, 11) ~ ">";
+				return "<" ~ padTo(Settings.frameDuration.to!string ~ "ms", 11) ~ ">";
 			} else {
 				return "Frame Duration";
 			}
 		}, (i) {
 			Settings.frameDuration = clamp(Settings.frameDuration + i, 1, 1000);
+			writeSettings();
+		});
+		options ~= Option((s) {
+			if (s) {
+				return "<" ~ padTo(Settings.globalOffset.to!string ~ "ms", 11) ~ ">";
+			} else {
+				return "Global Offset";
+			}
+		}, (i) {
+			Settings.globalOffset = clamp(Settings.globalOffset + i * 5, -1000, 1000);
 			writeSettings();
 		});
 		options ~= Option((s) {
